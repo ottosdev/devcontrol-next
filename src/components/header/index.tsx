@@ -8,11 +8,11 @@ export function Header() {
   const { status, data } = useSession();
 
   async function handleLogin() {
-    await signIn("google", { callbackUrl: "/dashboard" });
+    await signIn();
   }
 
   async function handleLogout() {
-    await signOut({ callbackUrl: "/" });
+    await signOut();
   }
 
   return (
