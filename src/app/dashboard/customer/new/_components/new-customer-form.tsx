@@ -20,7 +20,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 interface NewCustomerFormProps {
-  userId: string;
+  userId?: string;
 }
 
 export function NewCustomerForm(props: NewCustomerFormProps) {

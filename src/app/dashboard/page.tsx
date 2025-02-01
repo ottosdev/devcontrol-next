@@ -9,13 +9,13 @@ import prisma from "@/lib/prisma";
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
 
-  if (!session || !session.user) {
-    redirect("/");
-  }
+  // if (!session || !session.user) {
+  //   redirect("/");
+  // }
 
   const tickets = await prisma.ticket.findMany({
     where: {
-      userId: session.user.id,
+      userId: session?.user.id,
       status: "ABERTO",
     },
     include: {
@@ -48,16 +48,20 @@ export default async function DashboardPage() {
             </tr>
           </thead>
           <tbody>
-            {tickets.length &&
-              tickets.map((ticket) => (
-                <Ticket
-                  key={ticket.id}
-                  ticket={ticket}
-                  customer={ticket.customer}
-                />
-              ))}
+            {tickets.map((ticket) => (
+              <Ticket
+                key={ticket.id}
+                ticket={ticket}
+                customer={ticket.customer}
+              />
+            ))}
           </tbody>
         </table>
+        {!tickets.length && (
+          <h1 className="px-2 md:px-0 text-gray-600">
+            Nenhum ticket aberto foi encontrado
+          </h1>
+        )}
       </main>
     </Container>
   );

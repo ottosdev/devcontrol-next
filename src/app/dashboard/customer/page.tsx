@@ -9,13 +9,13 @@ import prisma from "@/lib/prisma";
 export default async function CustomerPage() {
   const session = await getServerSession(authOptions);
 
-  if (!session || !session.user) {
-    redirect("/");
-  }
+  // if (!session || !session.user) {
+  //   redirect("/");
+  // }
 
   const customers = await prisma.customer.findMany({
     where: {
-      userId: session.user.id,
+      userId: session?.user.id,
     },
   });
 

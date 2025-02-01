@@ -3,7 +3,7 @@
 import { api } from "@/lib/api";
 import { useRouter } from "next/navigation";
 
-interface CustomerProps {
+export interface CustomerProps {
   customer: {
     id: string;
     name: string;

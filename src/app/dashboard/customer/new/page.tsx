@@ -10,9 +10,9 @@ import { NewCustomerForm } from "./_components/new-customer-form";
 export default async function NewCustomerPage() {
   const session = await getServerSession(authOptions);
 
-  if (!session || !session.user) {
-    redirect("/");
-  }
+  // if (!session || !session.user) {
+  //   redirect("/");
+  // }
 
   return (
     <Container>
@@ -28,7 +28,7 @@ export default async function NewCustomerPage() {
       </div>
 
       <main>
-        <NewCustomerForm userId={session.user.id} />
+        <NewCustomerForm userId={session?.user.id} />
       </main>
     </Container>
   );
