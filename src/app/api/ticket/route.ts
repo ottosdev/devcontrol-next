@@ -32,7 +32,7 @@ export async function PATCH(req: Request) {
       },
     });
 
-    return NextResponse.json({ message: "Ticket updated" }, { status: 200 });
+    return NextResponse.json({ message: "Ticket updated" });
   } catch (error) {
     return NextResponse.json(
       { message: "Error update ticket" },
