@@ -1,6 +1,5 @@
 "use client";
 import { TicketProps } from "@/app/dashboard/_components/ticket";
-import { CustomerProps } from "@/app/dashboard/customer/_components/card";
 import { ModalTicket } from "@/components/modal";
 import { createContext, useState } from "react";
 

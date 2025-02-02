@@ -37,7 +37,7 @@ export function Ticket({ ticket, customer }: TicketProps) {
 
       router.refresh();
     } catch (error) {
-      console.error(error);
+      alert(error);
     }
   }
 

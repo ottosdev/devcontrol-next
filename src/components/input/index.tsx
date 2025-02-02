@@ -1,6 +1,6 @@
 "use client";
 import { RegisterOptions, UseFormRegister } from "react-hook-form";
-
+// @typescript-eslint/no-explicit-any
 interface InputProps {
   type: string;
   placeholder: string;

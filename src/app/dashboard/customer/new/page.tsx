@@ -3,16 +3,11 @@ import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { FiArrowLeft } from "react-icons/fi";
 import { NewCustomerForm } from "./_components/new-customer-form";
 
 export default async function NewCustomerPage() {
   const session = await getServerSession(authOptions);
-
-  // if (!session || !session.user) {
-  //   redirect("/");
-  // }
 
   return (
     <Container>

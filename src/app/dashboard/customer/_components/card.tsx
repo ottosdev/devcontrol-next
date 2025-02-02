@@ -19,7 +19,9 @@ export function CustomerCard({ customer }: CustomerProps) {
       await api.delete(`/api/customer?id=${customer.id}`);
       router.refresh();
       router.replace("/dashboard/customer");
-    } catch (error) {}
+    } catch (error) {
+      alert(error);
+    }
   }
 
   return (

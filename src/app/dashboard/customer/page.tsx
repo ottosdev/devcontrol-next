@@ -2,16 +2,11 @@ import { Container } from "@/components/container";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { CustomerCard } from "./_components/card";
 import prisma from "@/lib/prisma";
 
 export default async function CustomerPage() {
   const session = await getServerSession(authOptions);
-
-  // if (!session || !session.user) {
-  //   redirect("/");
-  // }
 
   const customers = await prisma.customer.findMany({
     where: {
