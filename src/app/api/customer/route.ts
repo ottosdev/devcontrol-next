@@ -40,8 +40,8 @@ export async function POST(request: Request) {
       message: "Cliente Cadastrado com sucesso!",
       customer,
     });
-  } catch (error: any) {
-    return NextResponse.json({ message: error.message }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json({ message: error }, { status: 500 });
   }
 }
 
