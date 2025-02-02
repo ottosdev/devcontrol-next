@@ -38,7 +38,7 @@ export async function PATCH(req: Request) {
     );
   } catch (error) {
     return NextResponse.json(
-      { message: "Error update ticket" },
+      { message: "Error update ticket" + error },
       { status: 400 }
     );
   }
