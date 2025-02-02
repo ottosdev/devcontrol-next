@@ -29,7 +29,6 @@ export async function PATCH(req: Request) {
     return NextResponse.json(
       {
         message: `Ticket ${updatedTicket.name} updated`,
-        ticket: updatedTicket,
       },
       { status: 200 }
     );
